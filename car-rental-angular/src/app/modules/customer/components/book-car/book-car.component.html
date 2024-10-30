@@ -1,0 +1,46 @@
+<div style="background-color: #ccc; padding: 24px;" *ngIf="car">
+  <div style="padding-top: 10px;"></div>
+
+  <div style="margin-top: 10px;" class="child">
+    <div style="background-color: #fff; padding: 24px;">
+      <div>
+        <img class="profile w-1/2 m-auto" style="height: 230px; border-radius: 10px; object-fit: cover;"
+          [src]="car.processedImage" alt="Car Image">
+      </div>
+
+      <div style="padding-top: 24px;">
+        <h2 style="cursor: pointer; color: #108ee9;">{{car.brand}} - {{car.name}}</h2>
+        <p>{{car.description}}</p>
+        <h5>
+          Price: <b>${{car.price}}</b> - Color: <b>{{car.color}}</b> - Transmission: <b>{{car.transmission}}</b> - Type: <b>{{car.type}}</b> - Year: <b>{{car.year}}</b>
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center pt-6">
+    <button style="min-width: 100px;" nzSize="small" nz-button nzType="primary" (click)="bookACar()">
+      Book
+    </button>
+  </div>
+
+  <div class="rating-section" style="margin-top: 24px;">
+    <h3>Rate this Car</h3>
+    <form [formGroup]="ratingForm" (ngSubmit)="submitRating()">
+      <input type="number" formControlName="rating" min="1" max="5" placeholder="Rating (1-5)" required>
+      <textarea formControlName="comment" placeholder="Leave a comment" required></textarea>
+      <button type="submit" nzSize="small" nz-button nzType="primary">Submit Rating</button>
+    </form>
+  </div>
+
+  <div class="ratings-list" style="margin-top: 24px;">
+    <h3>Ratings</h3>
+    <p><b>Average Rating:</b> {{ averageRating.toFixed(1) }} / 5</p>
+    <p><b>Total Comments:</b> {{ totalComments }}</p>
+    <div *ngFor="let rating of ratings" class="rating-card">
+      <p><b>Rating:</b> {{ rating.rating }} / 5</p>
+      <p><b>Comment:</b> {{ rating.comment }}</p>
+      <p><b>Commented by:</b> {{ rating.userName }} on {{ rating.createdAt | date:'short' }}</p>
+    </div>
+  </div>
+</div>

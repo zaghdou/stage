@@ -1,0 +1,55 @@
+<div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn && !isAgentLoggedIn">
+  <nav class="navbar navbar-guest">
+    <div class="navbar-title">
+      <a routerLink="/login">Car Rental Service</a>
+    </div>
+    <div class="nav-links">
+      <a routerLink="/register">Sign Up</a>
+      <a routerLink="/login">Login</a>
+    </div>
+  </nav>
+</div>
+
+<div *ngIf="isAdminLoggedIn">
+  <nav class="navbar navbar-admin">
+    <div class="navbar-title">
+      <a routerLink="/admin/dashboard"> Admin</a>
+    </div>
+    <div class="nav-links">
+      <a routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/admin/car" routerLinkActive="active">Post Car</a>
+      <a routerLink="/admin/bookings" routerLinkActive="active">Bookings</a>
+      <a routerLink="/admin/search" routerLinkActive="active">Search</a>
+      <a routerLink="#" (click)="logout()">Logout</a>
+    </div>
+  </nav>
+</div>
+
+<div *ngIf="isCustomerLoggedIn">
+  <nav class="navbar navbar-customer">
+    <div class="navbar-title">
+      <a routerLink="/customer/dashboard"> Customer</a>
+    </div>
+    <div class="nav-links">
+      <a routerLink="/customer/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/customer/my-bookings" routerLinkActive="active">My Bookings</a>
+      <a routerLink="#" (click)="logout()">Logout</a>
+    </div>
+  </nav>
+</div>
+
+<div *ngIf="isAgentLoggedIn">
+  <nav class="navbar navbar-agent">
+    <div class="navbar-title">
+      <a routerLink="/agent/dashboard"> Agent</a>
+    </div>
+    <div class="nav-links">
+      <a routerLink="/agent/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/agent/search" routerLinkActive="active">Search</a>
+      <a routerLink="/agent/car/1" routerLinkActive="active">Update Car</a>
+      <a routerLink="#" (click)="logout()">Logout</a>
+    </div>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>

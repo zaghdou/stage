@@ -1,0 +1,23 @@
+<div class="dashboard-container">
+    <div class="card-container">
+      <div *ngFor="let car of cars" class="car-card">
+        <div class="car-image">
+          <img [src]="car.processedImage" alt="Car Image">
+        </div>
+        <div class="car-details">
+          <h2 class="car-title"> {{ car.Title }}</h2>
+          <p class="car-description">{{ car.description }}</p>
+          <hr>
+          <div class="car-info">
+            <h5>
+                Price: <b>${{ car.price }}</b> - Color: <b>{{ car.color }}</b> - Location: <b>{{ car.Location }}</b> - Type: <b>{{ car.type }}</b> - Title: <b>{{ car.Title }} </b>             </h5>
+          </div>
+          <div class="car-actions">
+            <button class="btn-update" nzSize="small" nz-button nzType="primary" routerLink="/agentimmob/car/{{car.id}}">Update</button>
+            <button class="btn-delete" nzSize="small" nz-button nzType="primary" nzDanger (click)="deleteCar(car.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

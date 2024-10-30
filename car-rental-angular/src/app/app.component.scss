@@ -1,0 +1,62 @@
+/* Styles globaux pour la barre de navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar-title a {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: #f0f0f0;
+}
+
+/* Styles spécifiques pour les différents types de navigation */
+.navbar-guest {
+  background-color: #2c3e50; /* Couleur sombre pour les invités */
+}
+
+.navbar-admin {
+  background-color: #e74c3c; /* Rouge pour les admins */
+}
+
+.navbar-customer {
+  background-color: #3498db; /* Bleu pour les clients */
+}
+
+.navbar-agent {
+  background-color: #16a085; /* Couleur personnalisée pour les agents immobiliers */
+}
+
+/* Styles pour les boutons logout */
+.nav-links a:last-child {
+  background-color: #e74c3c; /* Rouge pour le bouton logout */
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links a:last-child:hover {
+  background-color: #c0392b;
+}

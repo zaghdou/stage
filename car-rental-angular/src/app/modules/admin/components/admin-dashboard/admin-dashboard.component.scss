@@ -1,0 +1,107 @@
+/* Conteneur principal du tableau de bord */
+.dashboard-container {
+    background-color: #f4f4f9;
+    min-height: 91vh;
+    padding: 24px;
+  }
+  
+  /* Conteneur des cartes */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Carte individuelle de voiture */
+  .car-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Image de voiture */
+  .car-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  /* Détails de la voiture */
+  .car-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  /* Titre de la voiture */
+  .car-title {
+    color: #007bff;
+    margin: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .car-title:hover {
+    color: #0056b3;
+  }
+  
+  /* Description de la voiture */
+  .car-description {
+    margin: 10px 0;
+    color: #6c757d;
+  }
+  
+  /* Informations sur la voiture */
+  .car-info {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #495057;
+  }
+  
+  /* Actions de la carte */
+  .car-actions {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  /* Boutons */
+  .btn-update, .btn-delete {
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .btn-update {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .btn-update:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-delete {
+    background-color: #dc3545;
+    color: #ffffff;
+  }
+  
+  .btn-delete:hover {
+    background-color: #c82333;
+  }
+  
